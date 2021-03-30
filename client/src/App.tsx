@@ -1,6 +1,6 @@
 import './App.css';
-import PostCreate from './PostCreate';
-import PostList from './PostList';
+import PostCreate from './components/Post/PostCreate';
+import PostList from './components/Post/PostList';
 
 function App() {
   return (
