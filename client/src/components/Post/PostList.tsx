@@ -8,7 +8,7 @@ const PostList: React.FC = (): JSX.Element => {
   const [posts, setPosts] = useState<Array<PostObj>>([]);
 
   const fetchPosts = async () => {
-    const res = await axios.get('http://localhost:4000/posts');
+    const res = await axios.get('http://localhost:4002/posts');
     setPosts(res.data);
   };
   useEffect(() => {
@@ -24,7 +24,7 @@ const PostList: React.FC = (): JSX.Element => {
         <div className="card-body">
           <h3>{post.title}</h3>
         </div>
-        <CommentList postId={post.id} />
+        {post?.comments && <CommentList comments={post?.comments} />}
         <CommentCreate postId={post.id} />
       </div>
     );
