@@ -15,3 +15,5 @@ Query : run npm start : Runs on 4002 Port
 Moderation : run npm start : Runs on 4003 Port
 
 Event Bus : run npm start : Runs on 4005 Port
+
+Application uses Packages such as Axios, Nodemon, Express for execution
