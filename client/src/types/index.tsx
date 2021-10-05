@@ -4,6 +4,7 @@ export interface ReqParam {
 export interface CommentObj {
   id: string;
   content?: string;
+  status?: string;
 }
 export interface PostObj extends CommentsObj {
   id: string;
