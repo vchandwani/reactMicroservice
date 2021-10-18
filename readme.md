@@ -30,7 +30,7 @@ Go to a specific directory and run > docker build . or > docker build -t [docker
 Run docker image > docker run ##image_id or > docker run [dockerId/posts]
 
 Example:
-docker build -t [dockerID/posts] .
+docker build -t [dockerID/posts] . (Example: docker build -t varunchandwani/event-bus .)
 docker run [dockerID/posts] or docker run [imageId]
 docker run -it [dockerID/posts] sh , Executes shell inside service
 docker ps -> status of running containers
