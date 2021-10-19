@@ -35,3 +35,46 @@ docker run [dockerID/posts] or docker run [imageId]
 docker run -it [dockerID/posts] sh , Executes shell inside service
 docker ps -> status of running containers
 docker logs [container_id]
+
+Commands :
+kubectl version
+
+MiniKube commands:
+
+minikube start --vm=true
+minikube start --driver=hyperv
+minikube start --driver=virtualbox
+
+Kubernetes Cluster : Collection of nodes + a master to manage them
+
+Node : A virtual Machine that will run our containers
+
+Pod : More or less similar to containers, it can run multiple containers
+
+Deployment : Monitors a set of pods, make sure they are running and restarts them if they crash
+
+Service : Provides an easy-to-remember url to access a running container
+
+Creating a POD:
+
+In terminal:
+cd posts
+docker build -t varunchandwani/posts:0.0.1 .
+
+Create yaml file for posts under infra/k8s folder
+Then execute : kubectl apply -f posts.yaml
+Alternatively execute from main directory : run kubectl apply -f infra/k8s/
+
+Docker and K8s Commands
+
+| Docker                                                 | K8S                                 |
+| :----------------------------------------------------- | :---------------------------------- |
+| docker ps -> status of running containers              | kubectl get pods                    |
+| "docker run -it [dockerID/posts] sh ,                  |                                     |
+| Executes shell inside service"                         | kubectl exec -t [pod_name] [cmd]    |
+| docker run [dockerID/posts] or docker run [imageId]    | kubectl logs [pod_name]             |
+| docker logs [container_id]                             | kubectl delete pod [pod_name]       |
+| "docker build -t [dockerID/posts] .                    |                                     |
+| (Example: docker build -t varunchandwani/event-bus .)" | kubectl apply -f [config file name] |
+|                                                        | kubectl describe pod [pod_name]     |
+|                                                        |                                     |
