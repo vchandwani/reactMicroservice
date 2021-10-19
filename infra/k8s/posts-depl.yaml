@@ -13,5 +13,5 @@ spec:
         app: posts
     spec:
       containers:
-        -name: posts
-        image: varunchandwani/posts:0.0.1
+        - name: posts
+          image: varunchandwani/posts:0.0.1
