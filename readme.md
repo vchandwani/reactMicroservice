@@ -58,8 +58,10 @@ Service : Provides an easy-to-remember url to access a running container
 Creating a POD:
 
 In terminal:
+
 cd posts
 docker build -t varunchandwani/posts:0.0.1 .
+docker ps
 
 Create yaml file for posts under infra/k8s folder
 Then execute : kubectl apply -f posts.yaml
@@ -77,4 +79,17 @@ Docker and K8s Commands
 | "docker build -t [dockerID/posts] .                    |                                     |
 | (Example: docker build -t varunchandwani/event-bus .)" | kubectl apply -f [config file name] |
 |                                                        | kubectl describe pod [pod_name]     |
-|                                                        |                                     |
+
+Minikube Users:
+If you are using a vm driver, you will need to tell Kubernetes to use the Docker daemon running inside of the single node cluster instead of the host.
+
+Run the following command:
+eval $(minikube docker-env)
+
+Note - This command will need to be repeated anytime you close and restart the terminal session.
+
+Afterward, you can build your image:
+docker build -t USERNAME/REPO .
+
+Update, your pod manifest as shown above and then run:
+kubectl apply -f infra/k8s/
